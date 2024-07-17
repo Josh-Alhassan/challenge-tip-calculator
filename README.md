@@ -77,3 +77,53 @@ function BillInput({ bill, onSetBill }) {
 }
 ```
 
+The `BillInput` component is defined here:
++ It takes `bill` and `onSetBill` as props.
++ It returns a `div` containing a `label` and an `input` element.
++ The `input` element is controlled, meaning its value is set to the `bil` prop, and its `onChange` event updates the `bill` state in the parent component (`TipCalculator`).
+
+```
+function SelectPercentage({ children, percentage, onSelect }) {
+    return (
+        <div>
+            <label>{children} </label>
+            <select
+                value={percentage}
+                onChange={(e) => onSelect(Number(e.target.value))}
+            >
+                <option value="0"> Dissatisfied (0%) </option>
+                <option value="0"> Dissatisfied (0%) </option>
+        </div>
+    )
+}
+```
+
+The `SelectPercentage` component is defined here:
+* It takes `children`, `percentage`, and `onSelect` as props.
+* It returns a `div` containing a `label` and a `select` element.
+* The `label` displays the `children` prop, allowing for customizable text.
+* The `select` element is controlled, with its value set to the `percentage` prop, and its `onChange` event updating the percentage state in the parent component.
+
+```
+function Output({bill, tip}) {
+    return (
+        <h3>
+            You pay ${bill + tip} (${bill} + ${tip} tip)
+        </h3>
+    )
+}
+```
+
+The `Output` component is defined here:
+* It takes `bill` and `tip` as props.
+* It returns an `h3` element displaying the total amount to be paid, which is the sim of `bill` and `tip`, and provides a breakdown of the bill and tip amounts.
+
+```
+function Reset({ onReset }) {
+    return <Button onClick={onReset}>Reset</Button>
+}
+```
+
+The `Reset` component is defined here:
+* It takes `onReset` as a prop.
+* It returns a `button` element with an `onClick` event that triggers the `onReset` function passed from the parent component, resting the inputs.
