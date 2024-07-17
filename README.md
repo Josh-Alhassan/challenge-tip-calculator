@@ -50,16 +50,16 @@ function TipCalculator() {
 
 The `TipCalculator` component is defined here. Inside this component:
 + Three state variables are defined using the `useState` hook:
-- `bill` to store the bill amount.
-- `percentage` to store the first person'strip percentage.
-- `percentage2` to store the second person's tip percentage.
+    - `bill` to store the bill amount.
+    - `percentage` to store the first person'strip percentage.
+    - `percentage2` to store the second person's tip percentage.
 
 + `tip` is a calculated value representing the average tip based on the percentages provided.
 + `handleReset` is a function to reset all state variable to their initial values.
 + The return statement provides the JSX structure for the component:
-- `BillInput` component to input the bill amount.
-- Two `SelectPercentage` components for selecting the tip percentages.
-- if `bill` is greater than 0, it conditionally renders the `output` component to show the calculated tip and the `Reset` component to reset the inputs.
+    - `BillInput` component to input the bill amount.
+    - Two `SelectPercentage` components for selecting the tip percentages.
+    - if `bill` is greater than 0, it conditionally renders the `output` component to show the calculated tip and the `Reset` component to reset the inputs.
 
 ```
 function BillInput({ bill, onSetBill }) {
